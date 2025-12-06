@@ -1,14 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  Dna, 
   Settings, 
   PlayCircle, 
   RotateCcw, 
   GraduationCap, 
   Eye, 
-  EyeOff, 
-  CheckCircle2, 
-  HelpCircle
+  EyeOff,
 } from 'lucide-react';
 import { NeedlemanWunsch } from '../../utils/algorithms/NeedlemanWunsch';
 
@@ -54,13 +51,8 @@ import { NeedlemanWunsch } from '../../utils/algorithms/NeedlemanWunsch';
       {/* Header */}
       <header className="bg-indigo-700 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-          <div className="flex items-center gap-3 mb-4 md:mb-0">
-            <div className="bg-white/10 p-2 rounded-full">
-              <Dna size={32} className="text-indigo-200" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight">Sequence Education</h1>
-            </div>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">Sequence Education</h1>
           </div>
           <div className="flex items-center gap-4 bg-indigo-800/50 px-4 py-2 rounded-lg border border-indigo-600">
              <div className="flex items-center gap-2">
@@ -317,7 +309,7 @@ import { NeedlemanWunsch } from '../../utils/algorithms/NeedlemanWunsch';
                        </div>
                      ))}
 
-                     {/* Matrix Rows */}
+                     {/* Matrix Table */}
                      {result.matrix.map((row, i) => (
                        <React.Fragment key={i}>
                          {/* Row Label */}
@@ -344,11 +336,7 @@ import { NeedlemanWunsch } from '../../utils/algorithms/NeedlemanWunsch';
                   </div>
                </div>
             </div>
-            
-            <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 text-xs text-slate-500 flex items-start gap-2">
-              <CheckCircle2 size={14} className="mt-0.5 text-green-600" />
-              <p>The matrix minimizes total cost. Matches reduce cost; gaps/mismatches increase it. Path traced back from bottom-right.</p>
-            </div>
+            <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 text-xs text-slate-500 flex items-start gap-2"/>
           </div>
         </div>
       </main>
