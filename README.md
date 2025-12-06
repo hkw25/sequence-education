@@ -48,15 +48,15 @@ Follow these steps to run the project locally on your machine.
 
 ## 🧠 How It Works
 
-This tool implements the **Global Alignment** algorithm using **Minimization logic**:
+This tool implements the **Global Alignment** algorithm:
 
-1.  **Initialization:** The first row and column represent the cost of aligning entirely with gaps ($i \times GapCost$).
+1.  **Initialization:** The first row and column represent the cost of aligning entirely with gaps.
 2.  **Recurrence:** Each cell $(i, j)$ calculates three costs:
-    * $Diagonal = M[i-1][j-1] + Cost(Seq1[i], Seq2[j])$
-    * $Up = M[i-1][j] + GapCost$
-    * $Left = M[i][j-1] + GapCost$
-    * **Result:** $M[i][j] = \min(Diagonal, Up, Left)$
-3.  **Traceback:** The algorithm follows the path of minimums from $M[n][m]$ to $M[0][0]$.
+    * $Diagonal = D[i-1][j-1] + Cost(Seq1[i], Seq2[j])$
+    * $Up = D[i-1][j] + GapCost$
+    * $Left = D[i][j-1] + GapCost$
+    * **Result:** $D[i][j] = \min(Diagonal, Up, Left)$
+3.  **Traceback:** The algorithm follows the path of minimums from $D[n][m]$ to $D[0][0]$.
 
 ## 📄 License
 
