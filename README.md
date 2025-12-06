@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Sequence Education: Educational Sequence Alignment Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Sequence Education** is an interactive web application designed to visualize the **Needleman-Wunsch Algorithm** for global sequence alignment. This educational platform focuses on **Cost Minimization (Edit Distance)**, allowing users to intuitively understand evolutionary distance.
 
-Currently, two official plugins are available:
+## 🧬 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Real-Time Visualization:** Watch the Dynamic Programming (DP) matrix populate instantly as you type sequences or adjust parameters.
+* **Visual Backtracking:** The system highlights the "Optimal Path" in green, tracing the decision process from the bottom-right back to the origin.
+* **Interactive Parameter Tuning:** Drag sliders to adjust **Match**, **Mismatch**, and **Gap** costs to see how biological assumptions change the alignment result.
+* **Educational Quiz Mode:** Masks the results to force active recall, allowing users to calculate matrix values manually and self-verify.
+* **Responsive Design:** Optimized for various screen sizes using Tailwind CSS.
 
-## React Compiler
+## 🛠️ Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React.js (Vite)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Icons:** Lucide React
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these steps to run the project locally on your machine.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Node.js (v16 or higher)
+* npm (v7 or higher)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/hkw25/sequence-education.git](https://github.com/hkw25/sequence-education.git)
+    cd sequence-education
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  Open your browser and navigate to `http://localhost:5173`
+
+## 🧠 How It Works
+
+This tool implements the **Global Alignment** algorithm using **Minimization logic**:
+
+1.  **Initialization:** The first row and column represent the cost of aligning entirely with gaps ($i \times GapCost$).
+2.  **Recurrence:** Each cell $(i, j)$ calculates three costs:
+    * $Diagonal = M[i-1][j-1] + Cost(Seq1[i], Seq2[j])$
+    * $Up = M[i-1][j] + GapCost$
+    * $Left = M[i][j-1] + GapCost$
+    * **Result:** $M[i][j] = \min(Diagonal, Up, Left)$
+3.  **Traceback:** The algorithm follows the path of minimums from $M[n][m]$ to $M[0][0]$.
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
