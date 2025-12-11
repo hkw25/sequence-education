@@ -1,8 +1,10 @@
-# Sequence Education: Educational Sequence Alignment Tool
+# Sequence Education
+
+[***Live Demo**](https://hkw25.github.io/sequence-education/)
 
 **Sequence Education** is an interactive web application designed to visualize the **Needleman-Wunsch Algorithm** for global sequence alignment. This educational platform focuses on **Cost Minimization (Edit Distance)**, allowing users to intuitively understand evolutionary distance.
 
-## 🧬 Key Features
+## Key Features
 
 * **Real-Time Visualization:** Watch the Dynamic Programming (DP) matrix populate instantly as you type sequences or adjust parameters.
 * **Visual Backtracking:** The system highlights the "Optimal Path" in green, tracing the decision process from the bottom-right back to the origin.
@@ -10,14 +12,14 @@
 * **Educational Quiz Mode:** Masks the results to force active recall, allowing users to calculate matrix values manually and self-verify.
 * **Responsive Design:** Optimized for various screen sizes using Tailwind CSS.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 * **Frontend:** React.js (Vite)
 * **Language:** TypeScript
 * **Styling:** Tailwind CSS
 * **Icons:** Lucide React
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these steps to run the project locally on your machine.
 
@@ -46,7 +48,7 @@ Follow these steps to run the project locally on your machine.
 
 4.  Open your browser and navigate to `http://localhost:5173`
 
-## 🧠 How It Works
+## How It Works
 
 This tool implements the **Global Alignment** algorithm:
 
@@ -58,6 +60,6 @@ This tool implements the **Global Alignment** algorithm:
     * **Result:** $D[i][j] = \min(Diagonal, Up, Left)$
 3.  **Traceback:** The algorithm follows the path of minimums from $D[n][m]$ to $D[0][0]$.
 
-## 📄 License
+## License
 
 This project is open-source and available under the MIT License.
