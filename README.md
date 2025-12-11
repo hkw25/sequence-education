@@ -1,6 +1,6 @@
 # Sequence Education
 
-[***Live Demo**](https://hkw25.github.io/sequence-education/)
+**Live Demo**(https://hkw25.github.io/sequence-education/)
 
 **Sequence Education** is an interactive web application designed to visualize the **Needleman-Wunsch Algorithm** for global sequence alignment. This educational platform focuses on **Cost Minimization (Edit Distance)**, allowing users to intuitively understand evolutionary distance.
 
@@ -32,7 +32,7 @@ Follow these steps to run the project locally on your machine.
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/hkw25/sequence-education.git](https://github.com/hkw25/sequence-education.git)
+    git clone https://github.com/hkw25/sequence-education.git
     cd sequence-education
     ```
 
