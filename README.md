@@ -1,6 +1,6 @@
 # Sequence Education
 
-**Live Demo**(https://hkw25.github.io/sequence-education/)
+[**Live Demo**](https://hkw25.github.io/sequence-education/)
 
 **Sequence Education** is an interactive web application designed to visualize the **Needleman-Wunsch Algorithm** for global sequence alignment. This educational platform focuses on **Cost Minimization (Edit Distance)**, allowing users to intuitively understand evolutionary distance.
 
